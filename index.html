@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        .photo-container {
-            text-align: center;
-            margin: 40px auto; 
-            max-width: 400px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        .birthday-photo {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .photo-caption {
-            font-family: sans-serif;
-            font-size: 1.2rem;
-            margin-top: 15px;
-            color: #333;
-        }
-    </style>
+   <style>
+    /* The main row wrapper holding all 3 photos */
+    .photo-row {
+        display: flex;            /* Enables the horizontal layout */
+        justify-content: center;  /* Centers the items along the row */
+        gap: 20px;                /* Adds a clean 20px space between each photo box */
+        max-width: 1000px;        /* Limits the maximum overall width of the row */
+        margin: 40px auto;        /* Adds vertical space and centers the entire row */
+        padding: 0 15px;          /* Prevents edge clipping on smaller screens */
+    }
+
+    /* Individual photo frames */
+    .photo-item {
+        flex: 1;                  /* Forces all 3 items to take up equal width */
+        max-width: 300px;         /* Prevents individual frames from getting too wide */
+        text-align: center;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    /* The actual images */
+    .birthday-photo {
+        width: 100%;              /* Scales perfectly to fit the .photo-item frame */
+        height: auto;
+        border-radius: 8px;
+        display: block;
+    }
+
+    .photo-caption {
+        font-family: sans-serif;
+        font-size: 1rem;
+        margin-top: 10px;
+        color: #333;
+    }
+</style>
+   
 </head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -306,13 +322,26 @@ const CONFIG = {
 </section>
  
 <section>
-    <div class="photo-container">
-      
-        <img src="she-and-me.jpg" alt="Me and she" class="birthday-photo">
-        <p class="photo-caption">Happy Birthday, Gandi Bacchi ❤️</p>
+    <div class="photo-row">
+        <!-- Photo 1 -->
+        <div class="photo-item">
+            <img src="photo1.jpg" alt="Memory 1" class="birthday-photo">
+            <p class="photo-caption">Memory 1 ❤️</p>
+        </div>
+        
+        <!-- Photo 2 -->
+        <div class="photo-item">
+            <img src="photo2.jpg" alt="Memory 2" class="birthday-photo">
+            <p class="photo-caption">Memory 2 ❤️</p>
+        </div>
+        
+        <!-- Photo 3 -->
+        <div class="photo-item">
+            <img src="photo3.jpg" alt="Memory 3" class="birthday-photo">
+            <p class="photo-caption">Memory 3 ❤️</p>
+        </div>
     </div>
 </section>
-
 <section id="prompts">
   <h2 class="display">Tap for a little something</h2>
   <div class="cards" id="cardGrid"></div>
